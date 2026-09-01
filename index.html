@@ -1,17 +1,625 @@
-<html>
-    <head>
-        <title>My Website</title>
-    </head>
-    <body>
-        <p>
-            Priyanshu
-        </p>
-        <br>
-        <a href="tags.html" target="_blank">Tags file</a>
-        <br>
-        <a href="table.html" target="_blank">Table file</a>
-        <br>
-        <a href="css.html" target="_blank">CSS</a>
-        <br>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page Layout - Integrated Web Application</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 20px;
+            background-color: #ffffff;
+        }
+
+        /* Outer Frame Layout Table */
+        table.main-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        table.main-table > tbody > tr > th, 
+        table.main-table > tbody > tr > td {
+            border: 1px solid #000;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Top Header Row */
+        .header-top {
+            background-color: #E3B081;
+            font-size: 18px;
+            height: 50px;
+        }
+
+        .header-top th {
+            padding: 5px 10px;
+            vertical-align: middle;
+        }
+
+        .gl-logo {
+            max-height: 40px;
+            max-width: 100%;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        /* Second Header Row (Navigation) */
+        .header-nav {
+            background-color: #F8E3CE;
+            height: 40px;
+        }
+
+        .nav-btn {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            font-weight: normal;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: #EBC6A7;
+        }
+
+        .nav-btn:active {
+            background-color: #D9A880;
+        }
+
+        /* Sidebar Column */
+        .sidebar {
+            width: 15%;
+            text-align: left;
+            vertical-align: top;
+            padding: 15px;
+            line-height: 2.2;
+            font-size: 16px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: #0066cc;
+        }
+
+        /* Main Content Display Cell */
+        .main-content {
+            min-height: 380px;
+            vertical-align: top;
+            padding: 0;
+        }
+
+        /* Integrated Form Shared Styles */
+        .login-wrapper, .reg-wrapper {
+            padding: 30px;
+            text-align: left;
+        }
+
+        .login-container {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .login-title, .form-title {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            width: 120px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .form-group input {
+            border: 3px solid #000000;
+            padding: 5px 8px;
+            font-size: 16px;
+            width: 220px;
+            outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+            margin-left: 90px;
+        }
+
+        .btn {
+            background-color: #ffffff;
+            color: #b22222;
+            font-size: 18px;
+            padding: 6px 20px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-submit {
+            border: 1px solid #000000;
+            box-shadow: 4px 4px 0px #000000;
+        }
+
+        .btn-reset {
+            border: 1px solid #000000;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 15px;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .locked-notice {
+            color: #b22222;
+            padding: 40px;
+        }
+
+        /* Registration Form Table Styles */
+        .reg-table {
+            border-collapse: collapse;
+            width: auto;
+            margin-left: 20px;
+        }
+
+        .reg-table td {
+            border: none;
+            padding: 8px 12px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .reg-table td:first-child {
+            font-weight: normal;
+            text-align: left;
+            width: 150px;
+        }
+
+        .reg-table input[type="text"],
+        .reg-table input[type="password"],
+        .reg-table textarea,
+        .reg-table select {
+            border: 2px solid #000;
+            padding: 5px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .reg-table input[type="text"],
+        .reg-table input[type="password"] {
+            width: 240px;
+        }
+
+        .reg-table textarea {
+            width: 240px;
+            height: 60px;
+            resize: vertical;
+        }
+
+        .reg-table select {
+            margin-right: 5px;
+        }
+
+        .checkbox-group label, .radio-group label {
+            margin-right: 12px;
+            font-size: 15px;
+        }
+
+        /* Catalogue Table Styles */
+        .catalogue-table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+
+        .catalogue-table td {
+            border: 1px solid #000;
+            padding: 12px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .book-cover {
+            width: 90px;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #888;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .book-details {
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .add-cart-btn {
+            background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+            border: 1px solid #a88734;
+            border-radius: 15px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .add-cart-btn:hover {
+            background: linear-gradient(to bottom, #f5d78e, #eeb933);
+        }
+
+        /* Cart Page Table Styles */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th, .cart-table td {
+            border: none;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .cart-table th {
+            font-weight: bold;
+        }
+
+        .cart-table .total-row td {
+            font-weight: normal;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="main-table">
+        <!-- Row 1: Logo and Web Site Name -->
+        <tr class="header-top">
+            <th style="width: 15%;">
+                <img src="https://www.glbitm.org/images/logo.png" alt="GL Bajaj Institute of Technology Logo" class="gl-logo">
+            </th>
+        <th colspan="4" style="color: white;">ONLINE BOOKSTORE</th>
+        </tr>
+
+        <!-- Row 2: Navigation Buttons -->
+        <tr class="header-nav">
+            <td style="width: 15%;"><button class="nav-btn" onclick="navigateTo('Home')">Home</button></td>
+            <td style="width: 21.25%;"><button class="nav-btn" onclick="navigateTo('Login')">Login</button></td>
+            <td style="width: 21.25%;"><button class="nav-btn" onclick="navigateTo('Registration')">Registration</button></td>
+            <td style="width: 21.25%;"><button class="nav-btn" onclick="navigateTo('Catalogue')">Catalogue</button></td>
+            <td style="width: 21.25%;"><button class="nav-btn" onclick="navigateTo('Cart')">Cart</button></td>
+        </tr>
+
+        <!-- Row 3: Sidebar and Dynamic Main Body -->
+        <tr>
+            <td class="sidebar">
+                <a href="#" onclick="navigateTo('CSE'); return false;">CSE</a>
+                <a href="#" onclick="navigateTo('ECE'); return false;">ECE</a>
+                <a href="#" onclick="navigateTo('EEE'); return false;">EEE</a>
+                <a href="#" onclick="navigateTo('CIVIL'); return false;">CIVIL</a>
+            </td>
+            <td colspan="4" class="main-content" id="content-area">
+                <!-- Inner content updates dynamically -->
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Accounts database storing user credentials
+        let registeredUsers = {
+            "Priyanshu Mavi": "1234"
+        };
+
+        let isAuthenticated = false;
+
+        // Pre-populated Cart Data
+        let cartItems = [
+            { name: "Java 2", price: 35.5, quantity: 2 },
+            { name: "XML bible", price: 40.5, quantity: 1 }
+        ];
+
+        function getLoginHTML(errorMessage = "") {
+            return `
+                <div class="login-wrapper">
+                    <div class="login-container">
+                        <div class="login-title">Login Page</div>
+                        <form onsubmit="handleLogin(event)">
+                            <div class="form-group">
+                                <label for="username">User Name:</label>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Passwords:</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-submit">Submit</button>
+                                <button type="reset" class="btn btn-reset">Reset</button>
+                            </div>
+                        </form>
+                        ${errorMessage ? `<div class="error-message">${errorMessage}</div>` : ''}
+                    </div>
+                </div>`;
+        }
+
+        function getRegistrationHTML() {
+            let daysOptions = '<option value="">Day</option>';
+            for (let i = 1; i <= 31; i++) daysOptions += `<option value="${i}">${i}</option>`;
+
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            let monthsOptions = '<option value="">Month</option>';
+            months.forEach((m, idx) => monthsOptions += `<option value="${idx+1}">${m}</option>`);
+
+            let yearsOptions = '<option value="">Year</option>';
+            for (let i = 2026; i >= 1950; i--) yearsOptions += `<option value="${i}">${i}</option>`;
+
+            return `
+                <div class="reg-wrapper">
+                    <div class="form-title">Registration Form</div>
+                    <form onsubmit="handleRegistration(event)">
+                        <table class="reg-table">
+                            <tr>
+                                <td><label for="reg-name">1) Name:</label></td>
+                                <td><input type="text" id="reg-name" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="reg-pass">2) Password:</label></td>
+                                <td><input type="password" id="reg-pass" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="reg-email">3) E-mail id:</label></td>
+                                <td><input type="text" id="reg-email" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="reg-phone">4) Phone Number:</label></td>
+                                <td><input type="text" id="reg-phone" required></td>
+                            </tr>
+                            <tr>
+                                <td>5) Sex:</td>
+                                <td class="radio-group">
+                                    <input type="radio" name="sex" id="sex-m" value="Male" checked>
+                                    <label for="sex-m">Male</label>
+                                    <input type="radio" name="sex" id="sex-f" value="Female">
+                                    <label for="sex-f">Female</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6) Date of birth:</td>
+                                <td>
+                                    <select id="dob-day" required>${daysOptions}</select>
+                                    <select id="dob-month" required>${monthsOptions}</select>
+                                    <select id="dob-year" required>${yearsOptions}</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7) Languages known:</td>
+                                <td class="checkbox-group">
+                                    <input type="checkbox" id="lang-eng" value="English">
+                                    <label for="lang-eng">English</label>
+                                    <input type="checkbox" id="lang-tel" value="Telugu">
+                                    <label for="lang-tel">Telugu</label>
+                                    <input type="checkbox" id="lang-hin" value="Hindi">
+                                    <label for="lang-hin">Hindi</label>
+                                    <input type="checkbox" id="lang-tam" value="Tamil">
+                                    <label for="lang-tam">Tamil</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="reg-address">8) Address:</label></td>
+                                <td><textarea id="reg-address" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding-top: 15px;">
+                                    <div class="button-group" style="margin-left: 150px;">
+                                        <button type="submit" class="btn btn-submit">Submit</button>
+                                        <button type="reset" class="btn btn-reset">Reset</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>`;
+        }
+
+        function getCatalogueHTML() {
+            return `
+                <table class="catalogue-table">
+                    <tr>
+                        <td style="width: 25%;">
+                            <img src="image.png" alt="XML Bible Cover" class="book-cover">
+                        </td>
+                        <td style="width: 25%;" class="book-details">
+                            <strong>Book:</strong> Computer Science<br>
+                            <strong>Author :</strong> Robert Sedgewick<br>
+                        </td>
+                        <td style="width: 25%;">
+                            <strong>$40.5</strong>
+                        </td>
+                        <td style="width: 25%;">
+                            <button class="add-cart-btn" onclick="addToCart('Computer Science', 40.5)">
+                                🛒 Add to cart
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="image2.png" alt="AI Book Cover" class="book-cover">
+                        </td>
+                        <td class="book-details">
+                            <strong>Book :</strong> Java 2<br>
+                            <strong>Author:</strong> S.Russel<br>
+                            <strong>Publication:</strong> Princetonhall
+                        </td>
+                        <td>
+                            <strong>$35.5</strong>
+                        </td>
+                        <td>
+                            <button class="add-cart-btn" onclick="addToCart('Java 2', 35.5)">
+                                🛒 Add to cart
+                            </button>
+                        </td>
+                    </tr>
+                </table>`;
+        }
+
+        function getCartHTML() {
+            if (cartItems.length === 0) {
+                return `
+                    <div style="padding: 40px; text-align: left;">
+                        <h3>Your Cart is Empty</h3>
+                        <p>Go to the <a href="#" onclick="navigateTo('Catalogue'); return false;">Catalogue</a> to add books.</p>
+                    </div>`;
+            }
+
+            let rowsHTML = "";
+            let totalAmount = 0;
+
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalAmount += itemTotal;
+                rowsHTML += `
+                    <tr>
+                        <td style="width: 30%;">${item.name}</td>
+                        <td style="width: 20%;">$${item.price.toFixed(1)}</td>
+                        <td style="width: 25%;">${item.quantity}</td>
+                        <td style="width: 25%;">$${itemTotal % 1 === 0 ? itemTotal : itemTotal.toFixed(1)}</td>
+                    </tr>`;
+            });
+
+            return `
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Book name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rowsHTML}
+                        <tr class="total-row">
+                            <td>Total amount</td>
+                            <td colspan="3">- $${totalAmount % 1 === 0 ? totalAmount : totalAmount.toFixed(1)}</td>
+                        </tr>
+                    </tbody>
+                </table>`;
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value;
+
+            if (registeredUsers[user] && registeredUsers[user] === pass) {
+                isAuthenticated = true;
+                showPage('Catalogue');
+            } else {
+                document.getElementById('content-area').innerHTML = getLoginHTML("Invalid User Name or Password!");
+            }
+        }
+
+        function handleRegistration(event) {
+            event.preventDefault();
+            const name = document.getElementById('reg-name').value.trim();
+            const pass = document.getElementById('reg-pass').value;
+
+            if (name && pass) {
+                registeredUsers[name] = pass;
+                alert("Registration Successful! You can now log in using your User Name and Password.");
+                showPage('Login');
+            }
+        }
+
+        function navigateTo(pageName) {
+            if (pageName === 'Login') {
+                if (isAuthenticated) {
+                    if (confirm("You are currently logged in. Do you want to log out?")) {
+                        isAuthenticated = false;
+                        showPage('Login');
+                    }
+                } else {
+                    showPage('Login');
+                }
+                return;
+            }
+
+            if (pageName === 'Registration') {
+                showPage('Registration');
+                return;
+            }
+
+            if (!isAuthenticated) {
+                document.getElementById('content-area').innerHTML = `
+                    <div class="locked-notice">
+                        <h3>Access Denied</h3>
+                        <p>You must enter the correct username and password to access the <strong>${pageName}</strong> section.</p>
+                        <button class="btn btn-submit" style="margin-top: 15px;" onclick="navigateTo('Login')">Go to Login</button>
+                    </div>`;
+                return;
+            }
+
+            showPage(pageName);
+        }
+
+        function addToCart(bookTitle, price) {
+            const existingBook = cartItems.find(item => item.name === bookTitle);
+            if (existingBook) {
+                existingBook.quantity += 1;
+            } else {
+                cartItems.push({ name: bookTitle, price: price, quantity: 1 });
+            }
+            alert(bookTitle + " has been added to your cart!");
+        }
+
+        function showPage(pageName) {
+            const contentArea = document.getElementById('content-area');
+            if (pageName === 'Login') {
+                contentArea.innerHTML = getLoginHTML();
+            } else if (pageName === 'Registration') {
+                contentArea.innerHTML = getRegistrationHTML();
+            } else if (pageName === 'Catalogue') {
+                contentArea.innerHTML = getCatalogueHTML();
+            } else if (pageName === 'Cart') {
+                contentArea.innerHTML = getCartHTML();
+            } else {
+                contentArea.innerHTML = `
+                    <div style="padding: 30px; text-align: left;">
+                        <h2>${pageName} Page</h2>
+                        <p style="margin-top:15px;">Description of the WebSite (${pageName} section content)</p>
+                    </div>`;
+            }
+        }
+
+        // Initialize view with Login page
+        showPage('Login');
+    </script>
+
+</body>
 </html>
