@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.page-wrapper {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.reg-card {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    padding: 25px;
+    width: 420px;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: #f7caac;
+    padding: 8px;
+    border: 1px solid #000000;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.field-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Inputs, Textarea, & Selects */
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #000000;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Radio & Checkbox Groups */
+.option-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.vertical-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+/* Date of Birth Select Group */
+.dob-group {
+    display: flex;
+    gap: 10px;
+}
+
+.dob-group select {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f7caac;
+    border: 1px solid #000000;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #f4b084;
+}
