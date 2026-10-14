@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.cart-container {
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.div-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid #000000;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.header-row {
+    background-color: #fce4d6;
+    font-weight: bold;
+}
+
+.table-cell {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #000000;
+}
+
+.table-cell:last-child {
+    border-right: none;
+}
