@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style-registration.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <div class="reg-card">
+            <div class="card-title">Student Registration</div>
+            <form>
+                <!-- 1) Name -->
+                <div class="form-group">
+                    <div class="field-label">Name:</div>
+                    <input type="text" name="name" placeholder="Enter Full Name" required>
+                </div>
+
+                <!-- 2) Password -->
+                <div class="form-group">
+                    <div class="field-label">Password:</div>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+
+                <!-- 3) E-mailid -->
+                <div class="form-group">
+                    <div class="field-label">E-mail id:</div>
+                    <input type="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+
+                <!-- 4) Phone Number -->
+                <div class="form-group">
+                    <div class="field-label">Phone Number:</div>
+                    <input type="tel" name="phone" placeholder="Enter 10-digit number" required>
+                </div>
+
+                <!-- 5) Sex -->
+                <div class="form-group">
+                    <div class="field-label">Sex:</div>
+                    <div class="option-group">
+                        <div class="option-item">
+                            <input type="radio" id="male" name="sex" value="Male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="female" name="sex" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6) Date of Birth (3 select boxes) -->
+                <div class="form-group">
+                    <div class="field-label">Date of Birth:</div>
+                    <div class="dob-group">
+                        <!-- Day Select Box -->
+                        <select name="dob_day">
+                            <option value="">Day</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+
+                        <!-- Month Select Box -->
+                        <select name="dob_month">
+                            <option value="">Month</option>
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option>
+                            <option value="May">May</option>
+                            <option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option>
+                            <option value="Oct">Oct</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dec</option>
+                        </select>
+
+                        <!-- Year Select Box -->
+                        <select name="dob_year">
+                            <option value="">Year</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 7) Languages Known (Checkboxes) -->
+                <div class="form-group">
+                    <div class="field-label">Languages Known:</div>
+                    <div class="option-group vertical-group">
+                        <div class="option-item">
+                            <input type="checkbox" id="english" name="language" value="English">
+                            <label for="english">English</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="telugu" name="language" value="Telugu">
+                            <label for="telugu">Telugu</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="hindi" name="language" value="Hindi">
+                            <label for="hindi">Hindi</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="tamil" name="language" value="Tamil">
+                            <label for="tamil">Tamil</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8) Address -->
+                <div class="form-group">
+                    <div class="field-label">Address:</div>
+                    <textarea name="address" rows="3" placeholder="Enter full address..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
