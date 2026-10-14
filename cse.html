@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Books</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            padding: 15px;
+        }
+
+        .catalogue-container {
+            width: 100%;
+        }
+
+        /* Banner Header */
+        .page-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            background-color: #f7caac;
+            padding: 10px;
+            border: 2px solid #000000;
+        }
+
+        /* Outer Table Box */
+        .div-table {
+            width: 100%;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Table Row (Forces Horizontally Aligned Columns) */
+        .table-row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            border-bottom: 1px solid #000000;
+            align-items: center;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        /* Header Row Color */
+        .header-row {
+            background-color: #fce4d6;
+            font-weight: bold;
+        }
+
+        /* Individual Table Cells */
+        .table-cell {
+            padding: 10px;
+            border-right: 1px solid #000000;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .table-cell:last-child {
+            border-right: none;
+        }
+
+        /* Column Width Ratios */
+        .cell-image {
+            width: 90px;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cell-title {
+            flex: 2.5;
+            font-weight: bold;
+        }
+
+        .cell-author {
+            flex: 2;
+        }
+
+        .cell-price {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .cell-action {
+            flex: 1.2;
+            justify-content: center;
+        }
+
+        /* Book Image Styling */
+        .cell-image img {
+            width: 50px;
+            height: 70px;
+            object-fit: cover;
+            border: 1px solid #000000;
+        }
+
+        /* Add to Cart Button */
+        .add-btn {
+            padding: 6px 12px;
+            background-color: #f7caac;
+            border: 1px solid #000000;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .add-btn:hover {
+            background-color: #f4b084;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="catalogue-container">
+        <!-- Page Title Banner -->
+        <div class="page-title">CSE Book Catalogue</div>
+
+        <!-- Div-based Table -->
+        <div class="div-table">
+            
+            <!-- Header Row -->
+            <div class="table-row header-row">
+                <div class="table-cell cell-image">Book Image</div>
+                <div class="table-cell cell-title">Book Title</div>
+                <div class="table-cell cell-author">Author</div>
+                <div class="table-cell cell-price">Price</div>
+                <div class="table-cell cell-action">Action</div>
+            </div>
+
+            <!-- Book 1 -->
+            <div class="table-row">
+                <div class="table-cell cell-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'><rect width='60' height='80' fill='%232c3e50'/><text x='30' y='45' fill='white' font-size='10' text-anchor='middle' font-family='sans-serif'>WEB TECH</text></svg>" alt="Web Technologies">
+                </div>
+                <div class="table-cell cell-title">Web Technologies</div>
+                <div class="table-cell cell-author">Uttam K. Roy</div>
+                <div class="table-cell cell-price">₹450</div>
+                <div class="table-cell cell-action">
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="table-row">
+                <div class="table-cell cell-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'><rect width='60' height='80' fill='%2327ae60'/><text x='30' y='45' fill='white' font-size='10' text-anchor='middle' font-family='sans-serif'>DSA IN C</text></svg>" alt="Data Structures">
+                </div>
+                <div class="table-cell cell-title">Data Structures using C</div>
+                <div class="table-cell cell-author">Reema Thareja</div>
+                <div class="table-cell cell-price">₹500</div>
+                <div class="table-cell cell-action">
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="table-row">
+                <div class="table-cell cell-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'><rect width='60' height='80' fill='%238e44ad'/><text x='30' y='45' fill='white' font-size='10' text-anchor='middle' font-family='sans-serif'>OS CONCEPTS</text></svg>" alt="Operating System">
+                </div>
+                <div class="table-cell cell-title">Operating System Concepts</div>
+                <div class="table-cell cell-author">Silberschatz</div>
+                <div class="table-cell cell-price">₹650</div>
+                <div class="table-cell cell-action">
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
