@@ -1,0 +1,70 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.catalogue-container { padding: 20px; }
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f7caac;
+    padding: 8px;
+    border: 1px solid #000000;
+}
+
+.div-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid #000000;
+}
+
+.table-row:last-child { border-bottom: none; }
+
+.header-row {
+    background-color: #fce4d6;
+    font-weight: bold;
+}
+
+.table-cell {
+    flex: 2;
+    padding: 10px;
+    border-right: 1px solid #000000;
+    display: flex;
+    align-items: center;
+}
+
+.table-cell:last-child { border-right: none; }
+
+.cell-image { flex: 1; justify-content: center; }
+
+.cell-image img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #000000;
+}
+
+.cell-price { flex: 1; }
+.cell-action { flex: 1.2; justify-content: center; }
+
+.add-btn {
+    padding: 6px 12px;
+    background-color: #f7caac;
+    border: 1px solid #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-btn:hover { background-color: #f4b084; }
